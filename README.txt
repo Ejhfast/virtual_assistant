@@ -2,4 +2,4 @@ I threw this together to get us started. Mostly, I'd recommend you just take a l
     
     python demo.py "add 34 and 4"
 
-You should get what you expect ;)
+Should give what you expect ;)
