@@ -5,6 +5,9 @@ import aiohttp_jinja2
 async def handle(request):
     return {}
 
+async def user_input(request):
+	return {}
+
 async def shirish(request):
 	data = await request.json()
 	print(data)
@@ -12,6 +15,7 @@ async def shirish(request):
 
 app = web.Application()
 app.router.add_route('GET', '/', handle)
+app.router.add_route('POST', '/user_input', user_input)
 app.router.add_route('POST', '/shirish', shirish)
 aiohttp_jinja2.setup(app,
     loader=aiohttp_jinja2.jinja2.FileSystemLoader('./'))
