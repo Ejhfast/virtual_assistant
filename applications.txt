@@ -1,0 +1,51 @@
+/Applications/Alfred 3.app
+/Applications/App Store.app
+/Applications/Atom.app
+/Applications/Automator.app
+/Applications/Calculator.app
+/Applications/Calendar.app
+/Applications/Chess.app
+/Applications/Contacts.app
+/Applications/Dashboard.app
+/Applications/DataGrip.app
+/Applications/Dictionary.app
+/Applications/Docker.app
+/Applications/DVD Player.app
+/Applications/FaceTime.app
+/Applications/Firefox 2.app
+/Applications/Firefox.app
+/Applications/Flashlight.app
+/Applications/Font Book.app
+/Applications/Game Center.app
+/Applications/GarageBand.app
+/Applications/Google Chrome.app
+/Applications/iBooks.app
+/Applications/Image Capture.app
+/Applications/iMovie.app
+/Applications/iTunes.app
+/Applications/Keynote.app
+/Applications/Launchpad.app
+/Applications/Mail.app
+/Applications/Maps.app
+/Applications/Messages.app
+/Applications/Mission Control.app
+/Applications/Notes.app
+/Applications/Numbers.app
+/Applications/Pages.app
+/Applications/Photo Booth.app
+/Applications/Photos.app
+/Applications/Preview.app
+/Applications/PyCharm.app
+/Applications/QuickTime Player.app
+/Applications/Reminders.app
+/Applications/Safari.app
+/Applications/Slack.app
+/Applications/Stickies.app
+/Applications/Sublime Text.app
+/Applications/System Center Endpoint Protection.app
+/Applications/System Preferences.app
+/Applications/TextEdit.app
+/Applications/Time Machine.app
+/Applications/TriggerClientUI.app
+/Applications/VirtualBox.app
+/Applications/Xcode.app
