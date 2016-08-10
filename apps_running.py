@@ -4,7 +4,6 @@ process_list.py can send the entire process list in a dict, with event_type: pro
 				of the additional or removed process(es), with event_type: process_update
 """
 
-from time import time, sleep
 import json
 import requests
 import subprocess, shlex
