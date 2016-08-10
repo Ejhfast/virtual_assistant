@@ -9,7 +9,7 @@ async def handle(request):
 async def user_input(request):
 	data = await request.post()
 	print(data)
-	return {}
+	return {'data': data}
 
 async def event_trigger(request):
 	data = await request.json()
