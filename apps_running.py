@@ -1,7 +1,5 @@
 """
-process_list.py can send the entire process list in a dict, with event_type: process_list (initially)
-				and will ping the server when there's a change in the process list with a dict 
-				of the additional or removed process(es), with event_type: process_update
+apps_running.py sends each app's on/off (T/F) status in a dict, with event_type: process_list
 """
 
 import json
