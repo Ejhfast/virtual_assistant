@@ -30,9 +30,12 @@
 	{% elif not is_confident %}
 	<h4>Which of these do you want to do?</h4>	
 	{% for cmd in cmds %}
-		<div>{{ cmd }}</div>
+	<ol>
+		<!-- TODO: js allowing for selection onclick=fcn() to work, bc cmd == cmds[id]  .... not super necessary if can get li #.. not sure if can.-->
+		<li id="{{loop.index0}}">{{ cmd }}</li>
+	</ol>
 	{% endfor %}
-	<div>None of these: </div><input type="text" name="other"><input type="submit" name="">
+	<div>None of these</div> <!-- SHOW ONCE CHOSEN 'None of these' onclick=different_fcn() : <input type="text" name="other"><input type="submit" name=""> ... becomes another matching mess. Then tell user we haven't implemented it yet??????-->	
 	{% else %}
 	<div>ERROR</div>
 	{% endif %}
