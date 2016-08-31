@@ -2,10 +2,39 @@
 <meta charset="utf-8" />
 <html>
 <head>
+<!-- Google jQuery: <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/validation.js"></script>
 </head>
 <body>
-<h3>Lady Wincester</h3>
-<div>{{ user_input }}</div>
-<div>{{ output }}</div>
+	<h3>Iris</h3>
+	<div>Your command: {{ user_input }}</div>
+	<!-- if exactly matches 1 cmd -->
+	{% if is_match %}
+		{% if vals %}
+		<div>Response: {{ vals }}</div>
+		{% else %}
+		<div>Done!</div>
+		{% endif %}
+	<!-- if confident in 1 cmd -->
+	{% elif is_confident %}
+	<h4>We predict you want to:</h4>
+	<div>{{ cmd }}</div>
+	<ul>
+		{% for arg in args %}
+		<li>What is {{ arg }}? <input type="text" name="arg"></li>
+		{% endfor %}
+	</ul>
+	<input type="submit" name="args_submit">
+	<!-- if unsure and displays top 3 cmds -->
+	{% elif not is_confident %}
+	<h4>Which of these do you want to do?</h4>	
+	{% for cmd in cmds %}
+		<div>{{ cmd }}</div>
+	{% endfor %}
+	<div>None of these: </div><input type="text" name="other"><input type="submit" name="">
+	{% else %}
+	<div>ERROR</div>
+	{% endif %}
 </body>
 </html>

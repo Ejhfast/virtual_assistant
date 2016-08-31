@@ -139,7 +139,7 @@ def get_important_features(vec,clf):
 def main():
 	for i in range(1,6):
 		include_args = True #When false, replaces test examples with ARG token. When true, just removes brackets around arguments
-		filename = "sh" + str(i) + "_sklearn_70_vars_50_coms.csv"
+		filename = "../variants_data/sh" + str(i) + "_sklearn_70_vars_50_coms.csv"
 		snum = "Sample " + str(i)
 		eval_file = "nb_results_for_poster_bigram.txt"
 		train_docs,test_docs,y_train,y_test = get_docs_and_labels(filename,include_args)

@@ -11,9 +11,24 @@ async def handle(request):
 async def user_input(request):
 	data = await request.post()
 	user_input = data['user_input']
+	
+	# register commands
 	assistant = demo_commands.commands(Assistant())
-	output = assistant.execute(user_input)
-	return {'user_input': user_input, 'output': output}
+	
+	# if direct match, execute the query
+	is_match, vals = assistant.execute(user_input)
+	if is_match:
+		return {'user_input': user_input, 'is_match': is_match, 'vals': vals}
+	
+	is_confident, cmds = assistant.predict(user_input)
+	if is_confident:
+		cmd = cmds[0]
+
+		# extract required parameters to ask user to specify
+		args = assistant.mappings[cmd]['args']
+
+		return {'user_input': user_input, 'is_confident': is_confident, 'cmds': cmds, 'cmd': cmd, 'args': args}
+	return {'user_input': user_input, 'is_confident': is_confident, 'cmds': cmds}
 
 async def event_trigger(request):
 	data = await request.json()
