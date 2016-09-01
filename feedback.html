@@ -2,12 +2,16 @@
 <meta charset="utf-8" />
 <html>
 <head>
-<!-- Google jQuery: <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-<script src="js/jquery-3.1.0.min.js"></script>
-<script src="js/validation.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/validation.js"></script>
+	<meta id="data" data-display-data="{{ display_data }}">
 </head>
 <body>
-	<h3>Iris</h3>
+	<div>{{ display_data }}</div>
+	<h2>Iris</h2>
 	<div>Your command: {{ user_input }}</div>
 	<!-- if exactly matches 1 cmd -->
 	{% if is_match %}
@@ -18,7 +22,7 @@
 		{% endif %}
 	<!-- if confident in 1 cmd -->
 	{% elif is_confident %}
-	<h4>We predict you want to:</h4>
+	<h5>We predict you want to:</h5>
 	<div>{{ cmd }}</div>
 	<ul>
 		{% for arg in args %}
@@ -28,14 +32,14 @@
 	<input type="submit" name="args_submit">
 	<!-- if unsure and displays top 3 cmds -->
 	{% elif not is_confident %}
-	<h4>Which of these do you want to do?</h4>	
+	<h5>Which of these do you want to do?</h5>	
+	<ul>
 	{% for cmd in cmds %}
-	<ol>
 		<!-- TODO: js allowing for selection onclick=fcn() to work, bc cmd == cmds[id]  .... not super necessary if can get li #.. not sure if can.-->
-		<li id="{{loop.index0}}">{{ cmd }}</li>
-	</ol>
+		<li id="{{loop.index0}}" class="command">{{ cmd }}</li>
 	{% endfor %}
-	<div>None of these</div> <!-- SHOW ONCE CHOSEN 'None of these' onclick=different_fcn() : <input type="text" name="other"><input type="submit" name=""> ... becomes another matching mess. Then tell user we haven't implemented it yet??????-->	
+	</ul>
+	<div id="no_command">None of these</div> <!-- SHOW ONCE CHOSEN 'None of these' onclick=different_fcn() : <input type="text" name="other"><input type="submit" name=""> ... becomes another matching mess. Then tell user we haven't implemented it yet??????-->	
 	{% else %}
 	<div>ERROR</div>
 	{% endif %}

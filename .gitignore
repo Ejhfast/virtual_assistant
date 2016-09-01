@@ -9,3 +9,5 @@ foreground_detection.scpt
 css/.DS_Store
 fonts/.DS_Store
 js/.DS_Store
+propbank.py
+propbank2d4j/
